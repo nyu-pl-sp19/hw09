@@ -1,5 +1,5 @@
 module type MultisetType = sig
-  type 'u mset
+  type 'u mset (** represents MSet(U) for arbitrary base sets U *)
 
   (* add declarations of multiset operations below *)
   

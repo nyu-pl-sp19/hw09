@@ -1,8 +1,5 @@
 module type OrderedMultisetType = sig
-  type u
-  type mset
-
-  (* add declarations of ordered multiset operations below *)
+  (* add declarations of ordered multiset types and operations below *)
   
 end
 
