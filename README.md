@@ -220,18 +220,19 @@ set is total (well-founded).
    val compare: t -> t -> int
    ```
    
-   that represents the `compare` function for the `Dershovitz-Manner
-   ordering` on multisets. The module type `OrderedMultisetType`
-   should additionally have all the types and operations provided by
-   `MultisetType`. Instead of copy/pasting the corresponding
-   declarations, learn how to use the [`include`
-   directive](https://caml.inria.fr/pub/docs/manual-ocaml/modtypes.html)
-   to textually include a signature in another one.
+   that represents the `compare` function for the Dershovitz-Manner
+   ordering that is derived from a total ordering on the base set. The
+   module type `OrderedMultisetType` should additionally have all the
+   types and operations provided by `MultisetType`. Instead of
+   copy/pasting the corresponding declarations, learn how to use
+   the
+   [`include` directive](https://caml.inria.fr/pub/docs/manual-ocaml/modtypes.html) to
+   textually include a signature in another one.
    
    
-2. Write a functor called `Make` that takes in a module
+2. Write a functor called `Make` that takes in a module `O`
    satisfying the signature `OrderedType` and returns a module
-   satisfying `OrderedMultisetType` such that the type `base` of the
+   satisfying `OrderedMultisetType` such that the type `u` of the
    latter is equal to the type `t` of the former. Moreover, your
    implementation of `compare` should satisfy the following
    constraints for all multisets *m1* and *m2*
@@ -243,18 +244,23 @@ set is total (well-founded).
    
    iii. `compare m1 m2` is positive if *m2 < m1* holds
    
+   Here, the ordering on the base set `u` is determined by the
+   `compare` function provided by the input module `O`.
+   
    Rather than reimplementing the remaining multiset operations again
-   from scratch build on your work of Part 2. That is, use the functor
-   `Part2.Make` to construct a module that implements all operations
-   in `Part2.ModuleType` and then use [module
-   inclusion](https://ocaml.org/learn/tutorials/modules.html#Module-inclusion)
-   to add those operations to the module constructed by the new
-   functor `Part3.Make`.
+   from scratch build on the work you did in Part 2. That is, use the
+   functor `Part2.Make` to construct a module that implements all
+   operations in `Part2.ModuleType` and then
+   use
+   [module inclusion](https://ocaml.org/learn/tutorials/modules.html#Module-inclusion) to
+   add those operations to the module constructed by the new functor
+   `Part3.Make`.
  
    Feel free to add additional functions to the module signature
-   `Part2.ModuleType` if they help with the implementation of
-   `compare` (e.g. to expose some of the iterator functions provided
-   by `Map.S`) and then implement these functions in `Part2.Make`.
+   `Part2.ModuleType` and then implement these functions in
+   `Part2.Make` if they help with the implementation of
+   `OrderedMultisetType.compare`. E.g. you may want to expose some of
+   the iterator functions provided by `Map.S` in `Part2.MultisetType`.
  
 3. Again, write some unit tests for testing your implementation.
 
