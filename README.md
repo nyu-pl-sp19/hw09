@@ -35,41 +35,41 @@ Let *MSet(U)* denote the set of all such functions, i.e. the set of
 all multisets over *U*. We consider the following operations on
 multisets:
 
-* `count`: *MSet(U) → U → ℕ*
+* *count: MSet(U) → U → ℕ*
 
-  `count` *m x* = *m x*
+  *count m x = m x*
 
-* `empty`: *MSet(U)*
+* *empty: MSet(U)*
 
-  `empty` = *λ x ∈ U. 0*
+  *empty = λ x ∈ U. 0*
 
-* `add`: *MSet(U) → U → MSet(U)*
+* *add: MSet(U) → U → MSet(U)*
 
-  `add` *m y* = *λ x ∈ U. if x = y then m x + 1 else m x*
+  *add m y = λ x ∈ U. if x = y then m x + 1 else m x*
 
-* `remove`: *MSet(U) → U → MSet(U)*
+* *remove: MSet(U) → U → MSet(U)*
 
-  `remove` *m y* = *λ x ∈ U. if x = y then max 0 (m x - 1) else m x*
+  *remove m y = λ x ∈ U. if x = y then max 0 (m x - 1) else m x*
 
-* `union` *MSet(U) → MSet(U) → MSet(U)*
+* *union: MSet(U) → MSet(U) → MSet(U)*
 
-  `union` *m1 m2* = *λ x ∈ U. max (m1 x) (m2 x)*
+  *union m1 m2 = λ x ∈ U. max (m1 x) (m2 x)*
 
-* `inter` *MSet(U) → MSet(U) → MSet(U)*
+* *inter: MSet(U) → MSet(U) → MSet(U)*
 
-  `inter` *m1 m2* = *λ x ∈ U. min (m1 x) (m2 x)*
+  *inter m1 m2 = λ x ∈ U. min (m1 x) (m2 x)*
 
-* `diff` *MSet(U) → MSet(U) → MSet(U)*
+* *diff: MSet(U) → MSet(U) → MSet(U)*
 
-  `diff` *m1 m2* = *λ x ∈ U. max 0 (m1 x - m2 x)*
+  *diff m1 m2 = λ x ∈ U. max 0 (m1 x - m2 x)*
 
-* `sum` *MSet(U) → MSet(U) → MSet(U)*
+* *sum: MSet(U) → MSet(U) → MSet(U)*
 
-  `sum` *m1 m2* = *λ x ∈ U. m1 x + m2 x*
+  *sum m1 m2 = λ x ∈ U. m1 x + m2 x*
 
-* `equal` *MSet(U) → MSet(U) → 𝔹*
+* *equal MSet(U) → MSet(U) → 𝔹*
 
-  `equal` *m1 m2* = *∀ x ∈ U. m1 x = m2 x*
+  *equal m1 m2 = ∀ x ∈ U. m1 x = m2 x*
   
 Our goal is to implement modules and functors for a simple library of
 multisets. We will consider two possible implementations that will
@@ -188,7 +188,7 @@ Given a strict (partial) ordering *x < y* on the elements *x,y ∈
 U*, we can lift this ordering to an ordering *m1 < m2* on multisets
 *m1, m2 ∈ MSet(U)* as follows: *m1 < m2* holds iff
 
-* *m1* and *m2* are different (i.e. `equal` *m1 m2* = `false`), and
+* *m1* and *m2* are different (i.e. *equal m1 m2 = false*), and
 
 * for every element *x ∈ U* which occurs more times in *m1* than
   in *m2*, there exists an element *y ∈ U* which occurs more times
@@ -236,12 +236,12 @@ set is total (well-founded).
    implementation of `compare` should satisfy the following
    constraints for all multisets *m1* and *m2*
    
-   i. `compare` *m1 m2* = 0 if *m1* and *m2* are equal (according to
+   i. `compare m1 m2 = 0` if *m1* and *m2* are equal (according to
    `equal`).
    
-   ii. `compare` *m1 m2* is negative if *m1 < m2* holds
+   ii. `compare m1 m2` is negative if *m1 < m2* holds
    
-   iii. `compare` *m1 m2* is positive if *m2 < m1* holds
+   iii. `compare m1 m2` is positive if *m2 < m1* holds
    
    Rather than reimplementing the remaining multiset operations again
    from scratch build on your work of Part 2. That is, use the functor
