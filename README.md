@@ -1,6 +1,6 @@
 ﻿# Homework 9 (20 Points)
 
-The deadline for Homework 9 is Monday, April 22, 6pm. The late
+The deadline for Homework 9 is Monday, April 22, 10pm. The late
 submission deadline is Thursday, April 25, 6pm.
 
 ## Getting the code template
