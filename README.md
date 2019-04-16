@@ -190,8 +190,8 @@ U*, we can lift this ordering to an ordering *m1 < m2* on multisets
 
 * *m1* and *m2* are different (i.e. *equal m1 m2 = false*), and
 
-* for every element *x ∈ U* which occurs more times in *m1* than
-  in *m2*, there exists an element *y ∈ U* which occurs more times
+* for every element *x ∈ U* which occurs more often in *m1* than
+  in *m2*, there exists an element *y ∈ U* which occurs more often
   in *m2* than in *m1* and *x < y*.
 
 For example, consider multisets over natural numbers *MSet(ℕ)*. Let
