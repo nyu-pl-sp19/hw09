@@ -154,7 +154,7 @@ this part should go into the files `src/part2.ml` and
    abstract specifications given above.
 
    **Hint:** Similar to the polymorphic multiset implementation, there
-   are many possible ways to implement the type `mset`. However, I
+   are many possible ways to implement the type `t`. However, I
    suggest to use maps over ordered keys, which are provided by the
    OCaml standard library. This choice also simplifies Part 3.
    
@@ -224,7 +224,8 @@ set is total (well-founded).
    ordering that is derived from a total ordering on the base set. The
    module type `OrderedMultisetType` should additionally have all the
    types and operations provided by `MultisetType`. Instead of
-   copy/pasting the corresponding declarations, learn how to use
+   copy/pasting the declarations that are "inherited" from
+   `MultisetType`, learn how to use
    the
    [`include` directive](https://caml.inria.fr/pub/docs/manual-ocaml/modtypes.html) to
    textually include a signature in another one.
