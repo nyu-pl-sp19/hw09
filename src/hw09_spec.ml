@@ -1,5 +1,7 @@
 open OUnit2
 open Part1
+
+(* Below are some examples of unit tests. These are not at all complete!!! Add your own unit tests. *)
   
 type my_u = A | B | C
 
