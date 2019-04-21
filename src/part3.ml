@@ -3,7 +3,7 @@ module type OrderedMultisetType = sig
   
 end
 
-module Make(O: Map.OrderedType) : OrderedMultisetType (* adding missing where clause *) = struct
+module Make(O: Map.OrderedType) : OrderedMultisetType (* adding missing with clause *) = struct
   (* add your implementation code here *)
 end
 
