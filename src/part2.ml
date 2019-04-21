@@ -6,6 +6,6 @@ module type MultisetType = sig
   
 end
 
-module Make(O: Map.OrderedType) : MultisetType (* add missing where clause *) = struct
+module Make(O: Map.OrderedType) : MultisetType (* add missing with clause *) = struct
   (* add your implementation code here *)
 end
