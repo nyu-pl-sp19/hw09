@@ -181,7 +181,7 @@ derived multisets. In particular, we can lift the ordering on the
 base set to an ordering on multisets. 
 
 There are many ways in which one can define an ordering on
-multisets. A particularly important one is the [Dershovitz-Manner
+multisets. A particularly important one is the [Dershowitz-Manna
 ordering](https://en.wikipedia.org/wiki/Dershowitz%E2%80%93Manna_ordering).
 
 Given a strict (partial) ordering *x < y* on the elements *x,y ∈
@@ -209,7 +209,7 @@ because there exists no *x ∈ ℕ* such that *x* occurs more often in
 more often in *m2* than in *m1* and is larger than all elements that
 occur in *m1*.
 
-The Dershovitz-Manner ordering has many nice properties. In
+The Dershowitz-Manna ordering has many nice properties. In
 particular, it is total (well-founded) iff the ordering on the base
 set is total (well-founded).
 
@@ -220,7 +220,7 @@ set is total (well-founded).
    val compare: t -> t -> int
    ```
    
-   that represents the `compare` function for the Dershovitz-Manner
+   that represents the `compare` function for the Dershowitz-Manna
    ordering that is derived from a total ordering on the base set. The
    module type `OrderedMultisetType` should additionally have all the
    types and operations provided by `MultisetType`. Instead of
